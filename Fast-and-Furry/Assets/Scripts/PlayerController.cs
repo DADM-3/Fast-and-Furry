@@ -58,6 +58,10 @@ public class PlayerController : MonoBehaviour
             gyroscope = Input.gyro;
             gyroscope.enabled = true;
         }
+        else
+        {
+            throw new System.Exception("Gyroscope not detected!");
+        }
     }
 
     private void JumpSwipeCheck()
