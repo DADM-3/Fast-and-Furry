@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class ScreensManager : MonoBehaviour
 {
     #region Change scene functions
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu_Scene");
+    }
+
     public void GoToPlay()
     {
         SceneManager.LoadScene("Game_Scene");
@@ -13,17 +18,12 @@ public class ScreensManager : MonoBehaviour
 
     public void GoToSettings()
     {
-        SceneManager.LoadScene("Screen_00_0_LogIn");
+        SceneManager.LoadScene("AboutUs_Scene");
     }
 
     public void Exit()
     {
-        SceneManager.LoadScene("Screen_00_0_LogIn");
-    }
-
-    public void GoToMainMenu()
-    {
-        SceneManager.LoadScene("MainMenu_Scene");
+        Application.Quit();
     }
     #endregion
 }
