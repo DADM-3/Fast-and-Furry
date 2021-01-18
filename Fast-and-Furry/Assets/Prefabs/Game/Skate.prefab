@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1093541512970621296}
   m_Layer: 0
-  m_Name: skate
+  m_Name: Skate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590918035625802928}
-  m_Mesh: {fileID: -6632663271230672128, guid: 2b4551c0c11bf9640910ceba24bbeafe, type: 3}
+  m_Mesh: {fileID: -6632663271230672128, guid: 0f6d5245b1a4531459ef23dba9943e7e, type: 3}
 --- !u!23 &4522629868428740614
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -153,7 +153,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871678059643278610}
-  m_Mesh: {fileID: -6025682324954262474, guid: 2b4551c0c11bf9640910ceba24bbeafe, type: 3}
+  m_Mesh: {fileID: -6025682324954262474, guid: 0f6d5245b1a4531459ef23dba9943e7e, type: 3}
 --- !u!23 &5405079611146571531
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -232,7 +232,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4783516868444346986}
-  m_Mesh: {fileID: -6680489713478340172, guid: 2b4551c0c11bf9640910ceba24bbeafe, type: 3}
+  m_Mesh: {fileID: -6680489713478340172, guid: 0f6d5245b1a4531459ef23dba9943e7e, type: 3}
 --- !u!23 &8061736749871593626
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -311,7 +311,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6402516958367552663}
-  m_Mesh: {fileID: -8924140254902419897, guid: 2b4551c0c11bf9640910ceba24bbeafe, type: 3}
+  m_Mesh: {fileID: -8924140254902419897, guid: 0f6d5245b1a4531459ef23dba9943e7e, type: 3}
 --- !u!23 &6635410577337671178
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -390,7 +390,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7862879997376218966}
-  m_Mesh: {fileID: 5058536060674849927, guid: 2b4551c0c11bf9640910ceba24bbeafe, type: 3}
+  m_Mesh: {fileID: 5058536060674849927, guid: 0f6d5245b1a4531459ef23dba9943e7e, type: 3}
 --- !u!23 &6277453838162655209
 MeshRenderer:
   m_ObjectHideFlags: 0
