@@ -1,0 +1,29 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class ScreensManager : MonoBehaviour
+{
+    #region Change scene functions
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu_Scene");
+    }
+
+    public void GoToPlay()
+    {
+        SceneManager.LoadScene("Game_Scene");
+    }
+
+    public void GoToSettings()
+    {
+        SceneManager.LoadScene("AboutUs_Scene");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
+    #endregion
+}

@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.sharedInstance.paused) return;
         shouldersFollow.transform.position = new Vector3(transform.position.x, shouldersFollow.transform.position.y, transform.position.z);
         velocity = new Vector3(gyroscope.attitude.normalized.x * lateralMoveSpeed, rb.velocity.y, frontalMoveSpeed);
         JumpSwipeCheck();
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GameManager.sharedInstance.paused) return;
         rb.velocity = velocity;
         JumpIfAllowed();
     }
@@ -57,6 +59,10 @@ public class PlayerController : MonoBehaviour
         {
             gyroscope = Input.gyro;
             gyroscope.enabled = true;
+        }
+        else
+        {
+            throw new System.Exception("Gyroscope not detected!");
         }
     }
 
