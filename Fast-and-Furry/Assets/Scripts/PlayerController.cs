@@ -22,7 +22,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float jumpForce;
     private Vector3 startSwipe, endSwipe;
-    private bool jumping;
+    public bool jumping;
+    public LayerMask floorLayer;
 
     //Camera follow
     [SerializeField]
@@ -39,14 +40,17 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (GameManager.sharedInstance.paused) return;
+        if (GameManager.sharedInstance.countdownActive) return;
         shouldersFollow.transform.position = new Vector3(transform.position.x, shouldersFollow.transform.position.y, transform.position.z);
         velocity = new Vector3(gyroscope.attitude.normalized.x * lateralMoveSpeed, rb.velocity.y, frontalMoveSpeed);
+        //velocity = new Vector3(rb.velocity.x, rb.velocity.y, frontalMoveSpeed);
         JumpSwipeCheck();
     }
 
     private void FixedUpdate()
     {
         if (GameManager.sharedInstance.paused) return;
+        if (GameManager.sharedInstance.countdownActive) return;
         rb.velocity = velocity;
         JumpIfAllowed();
     }
@@ -62,7 +66,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            throw new System.Exception("Gyroscope not detected!");
+            //throw new System.Exception("Gyroscope not detected!");
         }
     }
 
@@ -74,7 +78,7 @@ public class PlayerController : MonoBehaviour
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         {
             endSwipe = Input.GetTouch(0).position;
-            if (endSwipe.y > startSwipe.y && rb.velocity.y == 0)
+            if (endSwipe.y > startSwipe.y && IsTouchingFloor())
                 jumping = true;
         }
     }
@@ -86,6 +90,11 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             jumping = false;
         }
+    }
+
+    private bool IsTouchingFloor()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, 0.7f, floorLayer);
     }
     #endregion
 }
