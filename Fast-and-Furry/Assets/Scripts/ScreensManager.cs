@@ -25,5 +25,10 @@ public class ScreensManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void GoToURL(string url)
+    {
+        Application.OpenURL(url);
+    }
     #endregion
 }
