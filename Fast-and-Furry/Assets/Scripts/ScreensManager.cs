@@ -16,9 +16,9 @@ public class ScreensManager : MonoBehaviour
         SceneManager.LoadScene("Game_Scene");
     }
 
-    public void GoToControls()
+    public void GoToSettings()
     {
-        SceneManager.LoadScene("Controls_Scene");
+        SceneManager.LoadScene("AboutUs_Scene");
     }
 
     public void Exit()

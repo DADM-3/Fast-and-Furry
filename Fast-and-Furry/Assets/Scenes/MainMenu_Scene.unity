@@ -204,7 +204,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4588195977315232540, guid: e3d033f2208bd344e9d42c7f9fdf0a0e,
           type: 3}
-        m_MethodName: GoToControls
+        m_MethodName: GoToSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
