@@ -11,8 +11,14 @@ public class GameManager : MonoBehaviour
 
     //References to other game objects
     [Header("UI Elements")]
+    public Text countdownText;
     public Image darkBackground;
     public GameObject wannaLeaveMessage;
+
+    //Start countdown
+    [HideInInspector]
+    public bool countdownActive = true;
+    private float countdown = 4;
 
     //Management 
     [HideInInspector]
@@ -25,6 +31,23 @@ public class GameManager : MonoBehaviour
         if (sharedInstance == null)
             sharedInstance = this;
     }
+
+    private void Update()
+    {
+        if (paused) return;
+        if ((int)countdown > 0)
+        {
+            countdownText.text = ((int)countdown).ToString();
+            countdown -= Time.deltaTime;
+        }
+        else
+        {
+            countdownText.text = "GO!";
+            countdownActive = false;
+            StartCoroutine(HideCountdown());
+        }
+    }
+
     #endregion
 
     #region Game management functions
@@ -33,6 +56,14 @@ public class GameManager : MonoBehaviour
         paused = pause;
         darkBackground.gameObject.SetActive(pause);
         wannaLeaveMessage.SetActive(pause);
+    }
+    #endregion
+
+    #region Coroutines
+    private IEnumerator HideCountdown()
+    {
+        yield return new WaitForSeconds(1f);
+        countdownText.gameObject.SetActive(false);
     }
     #endregion
 }
