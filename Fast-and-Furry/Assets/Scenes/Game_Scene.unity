@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 91e2d1d8b56d6bc419cccc1a0d89b8e2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -803,7 +803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1135,7 +1135,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4588195977315232540, guid: e3d033f2208bd344e9d42c7f9fdf0a0e,
           type: 3}
-        m_MethodName: GoToMainMenu
+        m_MethodName: GoToPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1301,9 +1301,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1502561626}
-        m_MethodName: PauseGame
-        m_Mode: 6
+      - m_Target: {fileID: 4588195977315232540, guid: e3d033f2208bd344e9d42c7f9fdf0a0e,
+          type: 3}
+        m_MethodName: GoToMainMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1671,9 +1672,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1502561626}
-        m_MethodName: PauseGame
-        m_Mode: 6
+      - m_Target: {fileID: 4588195977315232540, guid: e3d033f2208bd344e9d42c7f9fdf0a0e,
+          type: 3}
+        m_MethodName: GoToMainMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2159,7 +2161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2266,7 +2268,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4588195977315232540, guid: e3d033f2208bd344e9d42c7f9fdf0a0e,
           type: 3}
-        m_MethodName: GoToMainMenu
+        m_MethodName: GoToPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
