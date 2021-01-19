@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag.CompareTo("Goal Line") == 0)
+        if (other.tag.CompareTo("Goal") == 0)
         {
             GameManager.sharedInstance.gameOver = true;
             GameManager.sharedInstance.darkBackground.gameObject.SetActive(true);
