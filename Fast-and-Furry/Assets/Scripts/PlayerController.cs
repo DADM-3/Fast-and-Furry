@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float jumpForce;
     private Vector3 startSwipe, endSwipe;
-    public bool jumping;
+    private bool jumping;
     public LayerMask floorLayer;
 
     //Camera follow
@@ -41,9 +41,9 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager.sharedInstance.paused) return;
         if (GameManager.sharedInstance.countdownActive) return;
+        if (GameManager.sharedInstance.gameOver) return;
         shouldersFollow.transform.position = new Vector3(transform.position.x, shouldersFollow.transform.position.y, transform.position.z);
         velocity = new Vector3(gyroscope.attitude.normalized.x * lateralMoveSpeed, rb.velocity.y, frontalMoveSpeed);
-        //velocity = new Vector3(rb.velocity.x, rb.velocity.y, frontalMoveSpeed);
         JumpSwipeCheck();
     }
 
@@ -51,8 +51,27 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager.sharedInstance.paused) return;
         if (GameManager.sharedInstance.countdownActive) return;
+        if (GameManager.sharedInstance.gameOver) return;
         rb.velocity = velocity;
         JumpIfAllowed();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag.CompareTo("Box") == 0)
+        {
+            GameManager.sharedInstance.gameOver = true;
+            GameManager.sharedInstance.loseMessage.SetActive(true);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag.CompareTo("Goal Line") == 0)
+        {
+            GameManager.sharedInstance.gameOver = true;
+            GameManager.sharedInstance.winMessage.SetActive(true);
+        }
     }
     #endregion
 

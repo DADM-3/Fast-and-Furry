@@ -13,7 +13,10 @@ public class GameManager : MonoBehaviour
     [Header("UI Elements")]
     public Text countdownText;
     public Image darkBackground;
+    [Header("Pop Up Screens")]
     public GameObject wannaLeaveMessage;
+    public GameObject winMessage;
+    public GameObject loseMessage;
 
     //Start countdown
     [HideInInspector]
@@ -23,6 +26,8 @@ public class GameManager : MonoBehaviour
     //Management 
     [HideInInspector]
     public bool paused;
+    [HideInInspector]
+    public bool gameOver;
     #endregion
 
     #region Unity Callbacks
