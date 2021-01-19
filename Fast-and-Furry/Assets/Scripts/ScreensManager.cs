@@ -8,11 +8,13 @@ public class ScreensManager : MonoBehaviour
     #region Change scene functions
     public void GoToMainMenu()
     {
+        SoundManager.sharedInstance.PlayMenuTheme();
         SceneManager.LoadScene("MainMenu_Scene");
     }
 
     public void GoToPlay()
     {
+        SoundManager.sharedInstance.PlayGameTheme();
         SceneManager.LoadScene("Game_Scene");
     }
 

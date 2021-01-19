@@ -1588,6 +1588,14 @@ MonoBehaviour:
   wannaLeaveMessage: {fileID: 288710532}
   winMessage: {fileID: 131992113}
   loseMessage: {fileID: 622895785}
+  buttons:
+  - {fileID: 593169912}
+  - {fileID: 88952804}
+  - {fileID: 2113743041}
+  - {fileID: 2123578064}
+  - {fileID: 1099060873}
+  - {fileID: 654566203}
+  - {fileID: 1505214541}
   countdownActive: 1
   paused: 0
   gameOver: 0

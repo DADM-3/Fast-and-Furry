@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
             GameManager.sharedInstance.gameOver = true;
             GameManager.sharedInstance.darkBackground.gameObject.SetActive(true);
             GameManager.sharedInstance.loseMessage.SetActive(true);
+            SoundManager.sharedInstance.PlayDefeatSnd();
         }
     }
 
@@ -73,6 +74,7 @@ public class PlayerController : MonoBehaviour
             GameManager.sharedInstance.gameOver = true;
             GameManager.sharedInstance.darkBackground.gameObject.SetActive(true);
             GameManager.sharedInstance.winMessage.SetActive(true);
+            SoundManager.sharedInstance.PlayVictorySnd();
         }
     }
     #endregion
@@ -87,7 +89,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            //throw new System.Exception("Gyroscope not detected!");
+            throw new System.Exception("Gyroscope not detected!");
         }
     }
 
@@ -100,7 +102,10 @@ public class PlayerController : MonoBehaviour
         {
             endSwipe = Input.GetTouch(0).position;
             if (endSwipe.y > startSwipe.y && IsTouchingFloor())
+            {
                 jumping = true;
+                SoundManager.sharedInstance.PlayNyaSnd();
+            }
         }
     }
 

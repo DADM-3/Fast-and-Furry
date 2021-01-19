@@ -17,11 +17,14 @@ public class GameManager : MonoBehaviour
     public GameObject wannaLeaveMessage;
     public GameObject winMessage;
     public GameObject loseMessage;
+    [Header("Buttons")]
+    public Button[] buttons;
 
     //Start countdown
     [HideInInspector]
     public bool countdownActive = true;
     private float countdown = 4;
+    private bool countdownSoundPlaying;
 
     //Management 
     [HideInInspector]
@@ -37,6 +40,11 @@ public class GameManager : MonoBehaviour
             sharedInstance = this;
     }
 
+    private void Start()
+    {
+        for (int i = 0; i < buttons.Length; i++)
+            buttons[i].onClick.AddListener(() => SoundManager.sharedInstance.PlayButtonSnd());
+    }
     private void Update()
     {
         if (paused) return;
@@ -44,6 +52,8 @@ public class GameManager : MonoBehaviour
         {
             countdownText.text = ((int)countdown).ToString();
             countdown -= Time.deltaTime;
+            if (!countdownSoundPlaying)
+                StartCoroutine(PlayCountdown());
         }
         else
         {
@@ -69,6 +79,14 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         countdownText.gameObject.SetActive(false);
+    }
+
+    private IEnumerator PlayCountdown()
+    {
+        countdownSoundPlaying = true;
+        SoundManager.sharedInstance.PlayCountdownSnd();
+        yield return new WaitForSeconds(.9f);
+        countdownSoundPlaying = false;
     }
     #endregion
 }
