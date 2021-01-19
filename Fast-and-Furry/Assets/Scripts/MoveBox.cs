@@ -23,6 +23,8 @@ public class MoveBox : MonoBehaviour
     }
     private void Update()
     {
+        if (GameManager.sharedInstance.paused) return;
+        if (GameManager.sharedInstance.gameOver) return;
         if (moveRight)
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         else

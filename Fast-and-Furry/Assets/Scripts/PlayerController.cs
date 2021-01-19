@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag.CompareTo("Box") == 0)
         {
             GameManager.sharedInstance.gameOver = true;
+            GameManager.sharedInstance.darkBackground.gameObject.SetActive(true);
             GameManager.sharedInstance.loseMessage.SetActive(true);
         }
     }
@@ -70,6 +71,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag.CompareTo("Goal Line") == 0)
         {
             GameManager.sharedInstance.gameOver = true;
+            GameManager.sharedInstance.darkBackground.gameObject.SetActive(true);
             GameManager.sharedInstance.winMessage.SetActive(true);
         }
     }
